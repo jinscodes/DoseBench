@@ -53,7 +53,7 @@
 .abstract-figure {
   width: min(1240px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 0 0 clamp(72px, 10vw, 140px);
+  padding: 0 0 clamp(32px, 5vw, 56px);
 }
 
 .abstract-figure img {
@@ -75,7 +75,7 @@
 @media (max-width: 560px) {
   .abstract-figure {
     width: calc(100% - 32px);
-    padding-bottom: 72px;
+    padding-bottom: 32px;
   }
 
   .abstract-figure img {
@@ -83,38 +83,14 @@
   }
 }
 
-.contribution-panel {
-  background: #f4f6f1;
+.abstract-contributions {
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 0 0 clamp(72px, 10vw, 140px);
 }
 
-.contribution-layout {
-  min-height: 100svh;
-  display: grid;
-  align-content: center;
-}
-
-.contribution-heading {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: clamp(40px, 8vw, 110px);
-  align-items: end;
-  margin-bottom: clamp(36px, 6vw, 72px);
-}
-
-.contribution-heading .eyebrow {
-  grid-column: 1 / -1;
-}
-
-.contribution-heading h2 {
-  margin-bottom: 0;
-}
-
-.contribution-heading > p:last-child {
-  max-width: 540px;
-  margin: 0 0 8px;
-  color: var(--muted);
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  line-height: 1.65;
+.abstract-contributions > .eyebrow {
+  margin-bottom: 20px;
 }
 
 .contribution-grid {
@@ -145,11 +121,6 @@
 }
 
 @media (max-width: 800px) {
-  .contribution-heading {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
   .contribution-grid {
     grid-template-columns: 1fr;
   }
@@ -160,6 +131,11 @@
 
   .contribution-grid article > span {
     margin-bottom: 34px;
+  }
+
+  .abstract-contributions {
+    width: calc(100% - 32px);
+    padding-bottom: 72px;
   }
 }
 

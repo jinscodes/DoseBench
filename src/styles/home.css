@@ -472,56 +472,99 @@
   font-size: 0.95rem;
 }
 
-.citation-window {
-  overflow: hidden;
-  border-radius: 26px;
-  background: #10221c;
-  color: #e8eee9;
-  box-shadow: 0 24px 60px rgb(20 32 28 / 18%);
-}
-
-.citation-toolbar {
-  position: relative;
-  min-height: 72px;
+.publication-card {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 0 26px;
-  border-bottom: 1px solid rgb(255 255 255 / 12%);
-  background: #1a3028;
+  grid-template-columns: 96px 1fr;
+  gap: clamp(28px, 5vw, 64px);
+  padding: clamp(34px, 6vw, 70px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: rgb(255 255 255 / 66%);
+  box-shadow: 0 22px 55px rgb(20 32 28 / 8%);
 }
 
-.window-dots {
+.publication-mark {
+  width: 84px;
+  height: 84px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background: var(--accent);
+  color: white;
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.publication-type {
+  margin: 0 0 16px;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.publication-content h3 {
+  max-width: 920px;
+  margin-bottom: 18px;
+  color: var(--ink);
+  font-size: clamp(1.6rem, 3.2vw, 2.9rem);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.publication-content h3 em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.publication-authors {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.publication-meta {
   display: flex;
+  flex-wrap: wrap;
   gap: 9px;
+  margin-bottom: clamp(32px, 5vw, 48px);
 }
 
-.window-dots span {
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
+.publication-meta span {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #eef4ef;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 750;
 }
 
-.window-dots span:nth-child(1) { background: #ef5f59; }
-.window-dots span:nth-child(2) { background: #f3ad3d; }
-.window-dots span:nth-child(3) { background: #43bd76; }
-
-.citation-filename {
-  color: #9db0a8;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.85rem;
+.formatted-citation {
+  max-width: 980px;
+  margin-bottom: 24px;
+  padding: 22px 26px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 14px 14px 0;
+  background: #edf1eb;
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(0.9rem, 1.3vw, 1.02rem);
+  line-height: 1.7;
 }
 
 .copy-citation {
-  justify-self: end;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 9px 13px;
-  border: 1px solid rgb(255 255 255 / 20%);
-  border-radius: 10px;
-  background: rgb(255 255 255 / 6%);
-  color: #bdc9c4;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
   font: inherit;
   font-size: 0.78rem;
   font-weight: 750;
@@ -531,29 +574,13 @@
 
 .copy-citation:hover,
 .copy-citation.is-copied {
-  background: rgb(255 255 255 / 12%);
-  color: white;
+  background: #214f40;
 }
 
 .copy-citation svg {
   width: 17px;
   height: 17px;
   fill: currentColor;
-}
-
-.citation-window pre {
-  overflow-x: auto;
-  margin: 0;
-  padding: clamp(30px, 5vw, 58px);
-  background: transparent;
-}
-
-.citation-window code {
-  color: #e8eee9;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: clamp(0.78rem, 1.35vw, 1.02rem);
-  line-height: 1.9;
-  white-space: pre;
 }
 
 .citation-note {
@@ -585,21 +612,15 @@
     padding-bottom: 52px;
   }
 
-  .citation-window {
+  .publication-card {
+    grid-template-columns: 1fr;
     border-radius: 18px;
   }
 
-  .citation-toolbar {
-    min-height: 62px;
-    padding: 0 16px;
-  }
-
-  .citation-filename {
-    display: none;
-  }
-
-  .citation-toolbar {
-    grid-template-columns: 1fr auto;
+  .publication-mark {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
   }
 
   .citation-footer {

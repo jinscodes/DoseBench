@@ -132,8 +132,35 @@ const findings = [
       </div>
     </div></section>
 
-    <section class="panel panel-dark" id="method"><div class="section-inner"><p class="eyebrow">Method</p><h2>From real evidence to rigorous evaluation.</h2>
-      <div class="process"><article><span>1</span><h3>Collect</h3><p>Describe the source data and inclusion process.</p></article><article><span>2</span><h3>Structure</h3><p>Explain how cases and evaluation targets are created.</p></article><article><span>3</span><h3>Evaluate</h3><p>Show how models are tested and responses are scored.</p></article><article><span>4</span><h3>Validate</h3><p>Summarize expert review and quality assurance.</p></article></div>
+    <section class="panel method-panel" id="method"><div class="section-inner method-shell">
+      <div class="method-heading"><p class="eyebrow">Methodology</p><h2>Experimental Setup and Evaluation</h2></div>
+      <div class="method-flow" role="img" aria-label="DoseBench evaluation pipeline from questions to model responses and safety metrics">
+        <div class="flow-node"><span>01</span><strong>230 questions</strong><small>Gold-labeled OTC cases</small></div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-node"><span>02</span><strong>8 LLMs</strong><small>Open-weight and API models</small></div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-node"><span>03</span><strong>5 responses</strong><small>Per question and model</small></div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-node"><span>04</span><strong>Final decision</strong><small>Most common YES / NO / AMBIGUOUS</small></div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-node"><span>05</span><strong>Evaluation</strong><small>Accuracy, safety, ambiguity, reliability</small></div>
+      </div>
+      <div class="method-details">
+        <article>
+          <span>01</span>
+          <div><h3>Prompting framework</h3><p>Every model returns a short explanation, a YES, NO, or AMBIGUOUS decision, and verbal confidence from 1 to 10. Four conditions compare Standard prompting with Checklist guidance, Drug Facts, and both together.</p>
+            <div class="condition-chips"><small>Standard</small><small>Checklist</small><small>Drug Facts</small><small>Both</small></div>
+          </div>
+        </article>
+        <article>
+          <span>02</span>
+          <div><h3>Repeated sampling protocol</h3><p>Each of eight models answers all 230 questions five times. The most common decision becomes the final answer, producing 9,200 responses per prompt condition and 36,800 responses across all four conditions.</p></div>
+        </article>
+        <article>
+          <span>03</span>
+          <div><h3>Safety-aware metrics</h3><p>Evaluation measures accuracy and consistency alongside False Approval Rate, AMBIGUOUS recall, confidence, and calibration. Accuracy and FAR use 95% confidence intervals from 2,000 question-level bootstrap samples.</p></div>
+        </article>
+      </div>
     </div></section>
 
     <section class="panel panel-accent" id="findings"><div class="section-inner"><p class="eyebrow">Findings</p><h2>Three results worth remembering.</h2>

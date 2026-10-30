@@ -2,6 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const githubUrl = "https://github.com/jinscodes/OTC_crawler";
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 const findings = [
   ["01", "Primary finding", "Replace this with the most important quantitative result from the paper."],
   ["02", "Robust evaluation", "Explain how DoseBench reveals behavior existing benchmarks do not capture."],
@@ -29,7 +32,7 @@ const findings = [
         <h1>Can I Take Another Dose? <em>DoseBench:</em> Evaluating LLM Decision-Making in OTC Dosing QA</h1>
         <p class="authors"><span>Maroof Kousar<sup>*</sup></span><span>Jinsung Han<sup>*</sup></span><span>Mohit Chandra</span><span>Munmun De Choudhury</span><span>Yibo Hu</span></p>
         <p class="equal-note"><sup>*</sup> Equal contribution</p>
-        <p class="institution"><img class="institution-logo" src={`${import.meta.env.BASE_URL}images/illinois-tech-logo.png`} alt="Illinois Tech" />Illinois Institute of Technology</p>
+        <p class="institution"><img class="institution-logo" src={`${baseUrl}images/illinois-tech-logo.png`} alt="Illinois Tech" />Illinois Institute of Technology</p>
         <p class="conference-info">Proceedings of the ACM Web Conference 2027 (WWW '27)<br />May 10–14, 2027 · Dublin, Ireland</p>
         <div class="home-links">
           <a class="home-button" href="#">Paper</a><a class="home-button" href="#">arXiv</a>
@@ -39,7 +42,7 @@ const findings = [
       </div>
       <figure class="visual figure-one">
         <img
-          src={`${import.meta.env.BASE_URL}images/figure-1.png`}
+          src={`${baseUrl}images/figure-1.png`}
           alt="A real Reddit dosing question where the LLM incorrectly answers yes, alongside DoseBench accuracy, false approval, and ambiguous recall ranges."
         />
         <figcaption>A real OTC dosing failure and results across eight LLMs.</figcaption>

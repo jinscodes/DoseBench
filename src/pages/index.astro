@@ -5,11 +5,6 @@ const githubUrl = "https://github.com/jinscodes/OTC_crawler";
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-const findings = [
-  ["01", "Primary finding", "Replace this with the most important quantitative result from the paper."],
-  ["02", "Robust evaluation", "Explain how DoseBench reveals behavior existing benchmarks do not capture."],
-  ["03", "Practical insight", "Summarize the result that matters most to researchers and practitioners."],
-];
 ---
 
 <BaseLayout title="DoseBench — Research Project" description="DoseBench: a benchmark for rigorous evaluation">
@@ -163,8 +158,47 @@ const findings = [
       </div>
     </div></section>
 
-    <section class="panel panel-accent" id="findings"><div class="section-inner"><p class="eyebrow">Findings</p><h2>Three results worth remembering.</h2>
-      <div class="finding-grid">{findings.map(([number, title, body]) => <article class="finding-card"><span>{number}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
+    <section class="panel findings-panel" id="findings"><div class="section-inner findings-shell">
+      <div class="findings-heading"><p class="eyebrow">Findings</p><h2>What We Found</h2></div>
+
+      <article class="finding-block finding-featured">
+        <div class="finding-copy">
+          <span class="finding-label">Finding 01</span>
+          <h3>Accuracy alone hides very different safety behaviors</h3>
+          <p>Overall accuracy ranges from <strong>44.8% to 62.2%</strong>, but false approval rates span <strong>14.0% to 60.5%</strong>. Models with nearly identical accuracy can therefore make very different dosing decisions.</p>
+          <p>Qwen2.5-14B and GPT-4o-mini both achieve about 53% accuracy, yet their false approval rates are 14.0% and 48.2%. Label-level recall also shows that some models favor YES while others are better at recognizing prohibited or ambiguous cases.</p>
+        </div>
+        <figure class="finding-figure finding-figure-wide">
+          <img src={`${baseUrl}images/findings/figure-3.png`} alt="Scatter plot comparing model accuracy with non-approval rate and heatmap of recall for YES, NO, and AMBIGUOUS labels." />
+          <figcaption>Figure 3 · Overall accuracy hides different decision behaviors.</figcaption>
+        </figure>
+      </article>
+
+      <article class="finding-block finding-split">
+        <div class="finding-copy">
+          <span class="finding-label">Finding 02</span>
+          <h3>Missing information is the hardest case</h3>
+          <p>Questions with missing dosing information have the lowest average accuracy across models at <strong>43.4%</strong>. Individual performance varies widely, from 19.4% to 77.8%, showing that recognizing when a safe answer cannot be given remains a distinct challenge.</p>
+          <p>No model leads across every question category. Strong performance on timing or dose-safety questions does not reliably transfer to rolling 24-hour totals, repeated dosing, or ambiguity detection.</p>
+        </div>
+        <figure class="finding-figure finding-figure-compact">
+          <img src={`${baseUrl}images/findings/figure-4.png`} alt="Heatmap of model accuracy across six DoseBench question categories, highlighting missing dosing information." />
+          <figcaption>Figure 4 · Accuracy by primary question category.</figcaption>
+        </figure>
+      </article>
+
+      <article class="finding-block finding-split finding-reverse">
+        <div class="finding-copy">
+          <span class="finding-label">Finding 03</span>
+          <h3>Incorrect answers are still delivered with high confidence</h3>
+          <p>Across all eight models, verbal confidence differs only modestly between correct and incorrect responses. A confident answer is therefore not a dependable signal that the underlying dosing judgment is safe.</p>
+          <p>This overconfidence is also reflected in calibration error: verbal-confidence ECE ranges from <strong>0.234 to 0.405</strong>. Confidence alone does not reliably distinguish correct from incorrect decisions.</p>
+        </div>
+        <figure class="finding-figure finding-figure-compact">
+          <img src={`${baseUrl}images/findings/figure-5.png`} alt="Bar chart comparing mean verbal confidence for correct and incorrect responses across eight models." />
+          <figcaption>Figure 5 · Mean verbal confidence for correct and incorrect responses.</figcaption>
+        </figure>
+      </article>
     </div></section>
 
     <section class="panel panel-light" id="implications"><div class="section-inner split implications-layout">

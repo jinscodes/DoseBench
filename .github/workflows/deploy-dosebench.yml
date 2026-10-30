@@ -2,7 +2,7 @@ name: Deploy DoseBench site
 
 on:
   push:
-    branches: [main]
+    branches: [gh-pages]
     paths:
       - "**"
       - ".github/workflows/deploy-dosebench.yml"

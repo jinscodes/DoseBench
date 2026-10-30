@@ -37,6 +37,52 @@
   object-fit: contain;
 }
 
+.abstract-panel {
+  display: block;
+  height: auto;
+  min-height: 100svh;
+  overflow: visible;
+}
+
+.abstract-panel .abstract-layout {
+  height: auto;
+  min-height: 100svh;
+  padding-bottom: clamp(40px, 6vh, 72px);
+}
+
+.abstract-figure {
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 0 0 clamp(72px, 10vw, 140px);
+}
+
+.abstract-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgb(255 255 255 / 58%);
+}
+
+.abstract-figure figcaption {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 560px) {
+  .abstract-figure {
+    width: calc(100% - 32px);
+    padding-bottom: 72px;
+  }
+
+  .abstract-figure img {
+    border-radius: 14px;
+  }
+}
+
 /* Keep every section within one calm, consistent visual tone. */
 body,
 .hero,

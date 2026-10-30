@@ -1,0 +1,94 @@
+/* Home-specific overrides are kept last so the original DoseBench visual language wins. */
+.hero {
+  height: auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: visible;
+  background: #f4f6f1;
+}
+
+.figure-one {
+  aspect-ratio: auto;
+  min-height: 0;
+  margin: 0;
+  padding: clamp(14px, 2vw, 24px);
+  background: rgb(255 255 255 / 72%);
+}
+
+.figure-one img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.figure-one figcaption {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.home-paper .institution-logo {
+  width: 82px;
+  height: auto;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+/* Keep every section within one calm, consistent visual tone. */
+body,
+.hero,
+.abstract-panel,
+.panel-light,
+.panel-dark,
+.panel-accent,
+.cite-panel {
+  background: #f4f6f1;
+  color: var(--ink);
+}
+
+.panel + .panel {
+  border-top: 1px solid var(--line);
+}
+
+.panel-dark .eyebrow,
+.panel-accent .eyebrow {
+  color: var(--accent);
+}
+
+.process {
+  border-color: var(--line);
+}
+
+.process article {
+  border-color: var(--line);
+}
+
+.process article > span {
+  color: var(--accent);
+}
+
+.process p,
+.finding-card p {
+  color: var(--muted);
+}
+
+.finding-card,
+.example-card {
+  border: 1px solid var(--line);
+  background: rgb(255 255 255 / 58%);
+}
+
+@media (max-width: 900px) {
+  .process article:nth-child(-n + 2) {
+    border-bottom-color: var(--line);
+  }
+}
+
+@media (max-width: 560px) {
+  .process article {
+    border-bottom-color: var(--line);
+  }
+}

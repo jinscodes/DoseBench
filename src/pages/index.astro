@@ -5,13 +5,6 @@ const githubUrl = "https://github.com/jinscodes/OTC_crawler";
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-const citation = `@inproceedings{kousar2027dosebench,
-  title     = {Can I Take Another Dose? DoseBench: Evaluating LLM Decision-Making in OTC Dosing QA},
-  author    = {Kousar, Maroof and Han, Jinsung and Chandra, Mohit and De Choudhury, Munmun and Hu, Yibo},
-  booktitle = {Proceedings of the ACM Web Conference 2027},
-  year      = {2027},
-  address   = {Dublin, Ireland}
-}`;
 ---
 
 <BaseLayout title="DoseBench — Research Project" description="DoseBench: a benchmark for rigorous evaluation">
@@ -231,16 +224,18 @@ const citation = `@inproceedings{kousar2027dosebench,
     </div></section>
 
     <section class="panel citation-panel" id="cite"><div class="section-inner citation-shell">
-      <div class="citation-heading"><p class="eyebrow">Citation</p><h2>Cite This Work</h2><p>Please use the following BibTeX entry when referencing DoseBench.</p></div>
-      <div class="publication-card">
-        <div class="publication-mark" aria-hidden="true">DB</div>
-        <div class="publication-content">
-          <p class="publication-type">Conference paper</p>
+      <div class="citation-heading"><p class="eyebrow">Citation</p><h2>Cite This Work</h2><p>Reference DoseBench in your research.</p></div>
+      <div class="citation-publication">
+        <div class="publication-summary">
+          <p class="publication-type">WWW 2027 · Conference Paper</p>
           <h3>Can I Take Another Dose? <em>DoseBench:</em> Evaluating LLM Decision-Making in OTC Dosing QA</h3>
-          <p class="publication-authors">Maroof Kousar · Jinsung Han · Mohit Chandra · Munmun De Choudhury · Yibo Hu</p>
-          <div class="publication-meta"><span>WWW 2027</span><span>Dublin, Ireland</span><span>Illinois Tech</span></div>
-          <div class="formatted-citation" id="formatted-citation">Kousar, M., Han, J., Chandra, M., De Choudhury, M., &amp; Hu, Y. (2027). Can I Take Another Dose? DoseBench: Evaluating LLM Decision-Making in OTC Dosing QA. Proceedings of the ACM Web Conference 2027.</div>
-          <button class="copy-citation" type="button" data-bibtex={citation} aria-label="Copy formatted citation">
+          <p class="publication-authors">Maroof Kousar, Jinsung Han, Mohit Chandra, Munmun De Choudhury, and Yibo Hu</p>
+          <p class="publication-venue">Proceedings of the ACM Web Conference 2027<br />Dublin, Ireland</p>
+        </div>
+        <div class="citation-copy-area">
+          <p class="citation-copy-label">Recommended citation</p>
+          <div class="formatted-citation" id="formatted-citation">Kousar, M., Han, J., Chandra, M., De Choudhury, M., &amp; Hu, Y. (2027). Can I Take Another Dose? DoseBench: Evaluating LLM Decision-Making in OTC Dosing QA. <em>Proceedings of the ACM Web Conference 2027.</em></div>
+          <button class="copy-citation" type="button" aria-label="Copy formatted citation">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H6a2 2 0 0 0-2 2v14h2V3h10V1Zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16h-9V7h9v14Z" /></svg>
             <span>Copy citation</span>
           </button>

@@ -201,9 +201,26 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
       </article>
     </div></section>
 
-    <section class="panel panel-light" id="implications"><div class="section-inner split implications-layout">
-      <div><p class="eyebrow">Implications</p><h2>What DoseBench changes for the field.</h2></div>
-      <div class="implication-list"><article><span>For researchers</span><p>Explain which research questions the benchmark makes measurable.</p></article><article><span>For developers</span><p>Describe how the findings guide safer and more reliable systems.</p></article><article><span>For the community</span><p>State what resources are released and how others can contribute.</p></article></div>
+    <section class="panel implications-panel" id="implications"><div class="section-inner implications-shell">
+      <div class="implications-heading"><p class="eyebrow">Implications</p><h2>What This Means</h2></div>
+      <div class="implication-cards">
+        <article>
+          <div class="implication-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14v3H5V3Zm2 5h10v2H7V8Zm-2 4h14v9H5v-9Zm3 3v3h2v-3H8Zm4 0v3h4v-3h-4Z" /></svg></div>
+          <h3>Rules are not enough</h3>
+          <p>Even when dosing rules are clear and provided to a model, failures persist when several doses must be combined over time or important details are missing. Factual knowledge alone does not guarantee a safe decision.</p>
+        </article>
+        <article>
+          <div class="implication-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm-1 15-4-4 1.4-1.4 2.6 2.6 4.6-4.6L17 10l-6 7Z" /></svg></div>
+          <h3>Guidance creates trade-offs</h3>
+          <p>A checklist makes models more cautious, while Drug Facts often improve accuracy but can reduce recognition of missing information. Safer behavior cannot be reduced to a single prompt or a single aggregate score.</p>
+        </article>
+        <article>
+          <div class="implication-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16v2H2V3h2v16Zm3-2-1.5-1.3 4.2-4.8 3.2 2.7 5.6-7.1L20 7.8l-6.9 8.7-3.2-2.8L7 17Z" /></svg></div>
+          <h3>Evaluate the decision process</h3>
+          <p>Health QA evaluation should test whether models apply the right rule to the available evidence, recognize when information is insufficient, and avoid false approvals—not merely whether the final answer appears correct.</p>
+        </article>
+      </div>
+      <div class="implications-note"><strong>Beyond OTC dosing</strong><span>The same challenge appears whenever health questions require both rule application and judgment about missing information.</span></div>
     </div></section>
 
     <section class="panel cite-panel" id="cite"><div class="section-inner cite-layout">

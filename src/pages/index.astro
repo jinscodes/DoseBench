@@ -94,10 +94,41 @@ const findings = [
       </div>
     </section>
 
-    <section class="panel panel-light" id="benchmark"><div class="section-inner split">
-      <div><p class="eyebrow">Benchmark</p><h2>Evaluation grounded in realistic clinical scenarios.</h2><p class="body-copy">Introduce the dataset, task categories, scale, and what makes DoseBench different. One concrete example will help a broad audience understand the challenge faster than a dense specification.</p></div>
-      <div class="example-card"><span class="card-label">Example case</span><p class="question">Place one representative benchmark question here.</p>
-        <div class="answer-row"><span>Context</span><strong>Patient-specific evidence</strong></div><div class="answer-row"><span>Task</span><strong>Safe dose reasoning</strong></div><div class="answer-row"><span>Evaluation</span><strong>Expert-reviewed outcome</strong></div>
+    <section class="panel benchmark-panel" id="benchmark"><div class="section-inner benchmark-shell">
+      <div class="benchmark-heading">
+        <p class="eyebrow">Benchmark</p>
+        <h2>The DoseBench Dataset</h2>
+      </div>
+      <div class="benchmark-content">
+        <figure class="dataset-table-card">
+          <table>
+            <thead><tr><th>Benchmark composition</th><th>Count</th></tr></thead>
+            <tbody>
+              <tr><td>Total OTC questions</td><td>230</td></tr>
+              <tr><td>Permitted doses <span>YES</span></td><td>74</td></tr>
+              <tr><td>Prohibited doses <span>NO</span></td><td>114</td></tr>
+              <tr><td>Missing information <span>AMBIGUOUS</span></td><td>42</td></tr>
+              <tr><td>Question categories</td><td>6</td></tr>
+            </tbody>
+          </table>
+          <figcaption>DoseBench gold-label distribution and benchmark scope.</figcaption>
+        </figure>
+        <div class="benchmark-details">
+          <p class="benchmark-intro">DoseBench is a focused benchmark for evaluating whether LLMs can make safe over-the-counter dosing decisions from consumer-style questions about acetaminophen and ibuprofen.</p>
+          <article>
+            <h3>Consumer-style questions</h3>
+            <p>Questions are based on public Reddit discussions, existing public datasets, and original scenarios designed around realistic dosing decisions.</p>
+          </article>
+          <article>
+            <h3>Human gold labels</h3>
+            <p>Two annotators assigned YES, NO, or AMBIGUOUS labels using documented Drug Facts, reaching 96.5% raw agreement and Cohen’s κ = 0.945.</p>
+          </article>
+          <article>
+            <h3>Structured safety coverage</h3>
+            <p>Six categories cover dose timing, rolling 24-hour totals, multiple medications, repeated dosing, missing information, and dose safety.</p>
+          </article>
+          <div class="benchmark-note">Eight LLMs produce five responses per question, enabling evaluation of accuracy, safety, ambiguity handling, consistency, and confidence.</div>
+        </div>
       </div>
     </div></section>
 

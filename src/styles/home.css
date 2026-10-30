@@ -83,6 +83,86 @@
   }
 }
 
+.contribution-panel {
+  background: #f4f6f1;
+}
+
+.contribution-layout {
+  min-height: 100svh;
+  display: grid;
+  align-content: center;
+}
+
+.contribution-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: clamp(40px, 8vw, 110px);
+  align-items: end;
+  margin-bottom: clamp(36px, 6vw, 72px);
+}
+
+.contribution-heading .eyebrow {
+  grid-column: 1 / -1;
+}
+
+.contribution-heading h2 {
+  margin-bottom: 0;
+}
+
+.contribution-heading > p:last-child {
+  max-width: 540px;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.65;
+}
+
+.contribution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.contribution-grid article {
+  min-height: 300px;
+  padding: clamp(26px, 3vw, 38px);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgb(255 255 255 / 58%);
+}
+
+.contribution-grid article > span {
+  display: block;
+  margin-bottom: clamp(50px, 7vh, 82px);
+  color: var(--accent);
+  font-weight: 850;
+}
+
+.contribution-grid article p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 800px) {
+  .contribution-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contribution-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contribution-grid article {
+    min-height: 220px;
+  }
+
+  .contribution-grid article > span {
+    margin-bottom: 34px;
+  }
+}
+
 /* Keep every section within one calm, consistent visual tone. */
 body,
 .hero,

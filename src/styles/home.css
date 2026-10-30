@@ -65,11 +65,8 @@
   background: rgb(255 255 255 / 58%);
 }
 
-.abstract-figure figcaption {
-  margin-top: 14px;
-  color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.5;
+.abstract-figure > .eyebrow {
+  margin-bottom: 20px;
 }
 
 @media (max-width: 560px) {

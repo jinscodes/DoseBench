@@ -87,7 +87,15 @@
 }
 
 .abstract-contributions > .eyebrow {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.abstract-contributions > h2 {
+  max-width: none;
+  margin-bottom: clamp(38px, 6vw, 68px);
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  text-align: center;
 }
 
 .contribution-grid {
@@ -97,18 +105,37 @@
 }
 
 .contribution-grid article {
-  min-height: 300px;
+  position: relative;
+  min-height: 390px;
   padding: clamp(26px, 3vw, 38px);
   border: 1px solid var(--line);
+  border-top: 5px solid var(--accent);
   border-radius: 24px;
   background: rgb(255 255 255 / 58%);
+  box-shadow: 0 18px 45px rgb(20 32 28 / 7%);
 }
 
-.contribution-grid article > span {
-  display: block;
-  margin-bottom: clamp(50px, 7vh, 82px);
+.contribution-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 34px;
+  border-radius: 18px;
+  background: var(--accent);
+  color: white;
+}
+
+.contribution-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+.contribution-grid h3 {
   color: var(--accent);
-  font-weight: 850;
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+  line-height: 1.25;
 }
 
 .contribution-grid article p {
@@ -124,10 +151,6 @@
 
   .contribution-grid article {
     min-height: 220px;
-  }
-
-  .contribution-grid article > span {
-    margin-bottom: 34px;
   }
 
   .abstract-contributions {

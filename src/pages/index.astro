@@ -1,11 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BlankPage from "../components/BlankPage.astro";
 
 const githubUrl = "https://github.com/jinscodes/OTC_crawler";
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 ---
+
+<BlankPage />
+{false && (
 
 <BaseLayout title="DoseBench — Research Project" description="DoseBench: a benchmark for rigorous evaluation">
   <header class="site-header">
@@ -25,8 +29,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
       <div class="home-details">
         <p class="eyebrow conference-label"><span aria-hidden="true"></span>Research Project</p>
         <h1>Can I Take Another Dose? <em>DoseBench:</em> Evaluating LLM Decision-Making in OTC Dosing QA</h1>
-        <p class="authors"><span>Maroof Kousar<sup>*</sup></span><span>Jinsung Han<sup>*</sup></span><span>Mohit Chandra</span><span>Munmun De Choudhury</span><span>Yibo Hu</span></p>
-        <p class="equal-note"><sup>*</sup> Equal contribution</p>
+        <p class="authors"><span>Maroof Kousar</span><span>Jinsung Han</span><span>Mohit Chandra</span><span>Munmun De Choudhury</span><span>Yibo Hu</span></p>
         <p class="institution"><img class="institution-logo" src={`${baseUrl}images/illinois-tech-logo.png`} alt="Illinois Tech" />Illinois Institute of Technology</p>
         <div class="home-links">
           <a class="home-button" href="#">Paper</a><a class="home-button" href="#">arXiv</a>
@@ -261,3 +264,4 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
     });
   </script>
 </BaseLayout>
+)}

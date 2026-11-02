@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/story.css";
+
+const githubUrl = "https://github.com/jinscodes/DoseBench";
+const baseUrl = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<BaseLayout title="DoseBench — Safer LLM Decisions for OTC Dosing" description="A one-page introduction to DoseBench and safer OTC dosing decisions.">
+  <header class="story-header">
+    <a class="story-brand" href="#story">DoseBench</a>
+    <nav aria-label="Page navigation">
+      <a href="#story">Story</a><a href="#finding">Finding</a><a href="#takeaway">Takeaway</a>
+      <a class="story-github" href={githubUrl} target="_blank" rel="noreferrer" aria-label="DoseBench on GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.57-.29-5.27-1.29-5.27-5.68 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.93 10.93 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.4-2.71 5.38-5.29 5.67.42.36.79 1.06.79 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z" /></svg>
+      </a>
+    </nav>
+  </header>
+
+  <main class="story-page">
+    <section class="story-hero" id="story"><div class="story-wrap hero-layout">
+      <div class="hero-copy">
+        <p class="story-label">A safety question hiding in plain sight</p>
+        <h1>Can I take<br />another dose?</h1>
+        <p class="hero-lede">A simple question can require checking the medication, dose, timing, daily limit—and whether crucial information is missing.</p>
+        <div class="study-facts" aria-label="DoseBench study overview">
+          <div><strong>230</strong><span>OTC questions</span></div><div><strong>8</strong><span>language models</span></div><div><strong>5×</strong><span>answers per question</span></div>
+        </div>
+        <p class="paper-summary">DoseBench evaluates acetaminophen and ibuprofen dosing decisions as <strong>YES</strong>, <strong>NO</strong>, or <strong>AMBIGUOUS</strong>.</p>
+      </div>
+      <figure class="story-figure hero-figure">
+        <img src={`${baseUrl}images/figure-1.png`} alt="A real OTC dosing question where a language model gives an unsafe answer, with headline DoseBench results." />
+        <figcaption>A real dosing question can expose a consequential model failure.</figcaption>
+      </figure>
+    </div></section>
+
+    <section class="finding-section" id="finding"><div class="story-wrap">
+      <div class="finding-intro">
+        <p class="story-label">The result to remember</p>
+        <h2>Similar accuracy does not mean similar safety.</h2>
+        <p>Overall scores hide what kind of decision a model makes. Two models can look equally accurate while one is far more likely to approve a prohibited dose.</p>
+      </div>
+      <div class="headline-results">
+        <div><strong>44.8–62.2%</strong><span>overall accuracy</span></div><div><strong>14.0–60.5%</strong><span>false approval rate</span></div>
+      </div>
+      <figure class="story-figure finding-figure">
+        <img src={`${baseUrl}images/findings/figure-3.png`} alt="Model accuracy, non-approval rate, and recall across YES, NO, and AMBIGUOUS questions." />
+        <figcaption>Models with similar accuracy make very different decisions across permitted, prohibited, and ambiguous cases.</figcaption>
+      </figure>
+    </div></section>
+
+    <section class="takeaway-section" id="takeaway">
+      <div class="story-wrap takeaway-layout">
+        <div><p class="story-label">Why it matters</p><h2>Knowing the rule is not enough.</h2></div>
+        <div class="takeaway-copy">
+          <p>Safer health QA requires models to apply dosing rules to the information actually available—and recognize when there is not enough information to answer.</p>
+          <p class="closing-line">DoseBench makes those differences visible.</p>
+          <a class="project-link" href={githubUrl} target="_blank" rel="noreferrer">Explore the code and benchmark <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <footer class="story-footer story-wrap">
+        <div><strong>DoseBench</strong><span>Illinois Institute of Technology</span></div>
+        <p>Maroof Kousar · Jinsung Han · Mohit Chandra · Munmun De Choudhury · Yibo Hu</p>
+      </footer>
+    </section>
+  </main>
+</BaseLayout>

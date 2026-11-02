@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  background: #f4f6f1;
+  color: var(--ink);
+}
+
+.blank-header {
+  position: fixed;
+  z-index: 40;
+  inset: 0 0 auto;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  padding: 0 max(24px, calc((100vw - 1240px) / 2));
+  border-bottom: 1px solid rgb(20 32 28 / 12%);
+  background: rgb(244 246 241 / 90%);
+  backdrop-filter: blur(18px);
+}
+
+.blank-canvas {
+  min-height: 100svh;
+  background: #f4f6f1;
+}
+
